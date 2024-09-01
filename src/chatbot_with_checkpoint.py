@@ -18,7 +18,6 @@ from typing import Annotated
 
 from langchain_openai import ChatOpenAI
 from langchain_community.tools.tavily_search import TavilySearchResults
-from langchain_core.messages import BaseMessage
 from typing_extensions import TypedDict
 
 from langgraph.graph import StateGraph, START
