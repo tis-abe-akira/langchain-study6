@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "langchain-study6"
+version = "0.1.0"
+description = ""
+authors = ["Akira Abe <akiraabe2005@yahoo.co.jp>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+langgraph = "^0.2.15"
+langsmith = "^0.1.108"
+langchain-openai = "^0.1.23"
+python-dotenv = "^1.0.1"
+tavily-python = "^0.4.0"
+langchain-community = "^0.2.15"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
