@@ -2,7 +2,7 @@
 name = "langchain-study6"
 version = "0.1.0"
 description = ""
-authors = ["Akira Abe <akiraabe2005@yahoo.co.jp>"]
+authors = ["abe.akira"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
