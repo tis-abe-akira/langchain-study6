@@ -12,6 +12,6 @@ https://langchain-ai.github.io/langgraph/tutorials/introduction/
 
 ## other setup
 
-TAVILYのAPI_KEYを取得して、環境変数(.env)に設定してください。
+- TAVILYのAPI_KEYを取得して、環境変数(.env)に設定してください。
 
-
+- LangSmithのAPI_KEYを取得して、環境変数(.env)に設定してください。
