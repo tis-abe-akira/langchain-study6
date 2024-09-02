@@ -1,5 +1,7 @@
 import os
 from dotenv import load_dotenv
+
+from utils import save_mermaid_to_html
 load_dotenv()
 OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY')
 
@@ -54,8 +56,15 @@ graph = graph_builder.compile(
     # interrupt_after=["tools"]
 )
 
+# Mermaid記法のGraph図を生成
+mermaid_code = graph.get_graph().draw_mermaid()
 
-user_input = "I'm learning LangGraph. Could you do some research on it for me?"
+# Mermaid記法のGraph図をHTMLファイルに出力
+save_mermaid_to_html(mermaid_code, "out/human_in_the_loop.html")
+
+
+# user_input = "I'm learning LangGraph. Could you do some research on it for me?"
+user_input = "LangGraphを学んでいます。それについて少し調べ日本語でまとめてもらえますか?"
 config = {"configurable": {"thread_id": "1"}}
 # The config is the **second positional argument** to stream() or invoke()!
 events = graph.stream(
@@ -74,6 +83,9 @@ result = existing_message.tool_calls
 print(result)
 
 # `None` will append nothing new to the current state, letting it resume as if it had never been interrupted
+print("")
+print("-------------------------- resuming --------------------------")
+print("")
 events = graph.stream(None, config, stream_mode="values")
 for event in events:
     if "messages" in event:
