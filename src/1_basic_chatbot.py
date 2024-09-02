@@ -27,7 +27,7 @@ graph_builder = StateGraph(State)
 
 
 # model definition
-llm = ChatOpenAI(model="gpt-4o")
+llm = ChatOpenAI(model="gpt-4o-mini")
 
 
 def chatbot(state: State):
